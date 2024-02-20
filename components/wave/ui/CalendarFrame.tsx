@@ -102,9 +102,19 @@ const CalendarFrame = () => {
           ))}
         </div>
         <div className="grid gap-y-1 grid-cols-7">
-          {[...Array(getDay(firstDay))].map((i) => (
-            <CalendarBtn key={i} />
+          {/*  */}
+          {[...Array(getDay(firstDay))].map((_, i) => (
+            <CalendarBtn
+              active={false}
+              key={i}
+              day={
+                getDaysInMonth(subMonths(trackDay, 1)) -
+                (getDay(firstDay) - i - 1)
+              }
+            />
           ))}
+
+          {}
 
           {datesOfMonth.map((i, index) => (
             <CalendarBtn
@@ -121,8 +131,8 @@ const CalendarFrame = () => {
             />
           ))}
 
-          {[...Array(6 - getDay(lastDay))].map((i) => (
-            <CalendarBtn key={i} />
+          {[...Array(6 - getDay(lastDay))].map((_, i) => (
+            <CalendarBtn key={i} day={i + 1} active={false}/>
           ))}
         </div>
         {/* <CalendarBtn day="20" />
