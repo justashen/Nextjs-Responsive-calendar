@@ -16,8 +16,8 @@ interface Props {
 
 const CalendarBtn = ({ day,className, onClick, id, today, special, active = true }: Props) => {
   const varient = {
-    today: "text-[#fafafa] bg-[#18181B] hover:bg-[#18181B]",
-    // today: "font-bold",
+    // today: "text-[#fafafa] bg-[#18181B] hover:bg-[#18181B]",
+    today: "font-bold",
     active: "text-[#09090B] hover:bg-[#f4f4f5]",
   };
 

@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useState } from "react";
 import { ChevronLeftIcon, ChevronRightIcon } from "@radix-ui/react-icons";
 import CalendarBtn from "./CalendarBtn";
@@ -58,10 +58,12 @@ const CalendarFrame = () => {
   };
 
   const datesOfMonth = [];
+  //days count is number of days in month
   for (let i = 0; i < daysCount; i++) {
     const fDate = firstDay;
     const theDate = addDays(fDate, i);
     datesOfMonth.push(theDate);
+    // datesOfMonth is a array of all dates in month
   }
 
   const handleCalendar = (i: Date) => {
@@ -89,6 +91,7 @@ const CalendarFrame = () => {
       </div>
 
       <div className="flex flex-col gap-x-1">
+        {/* disaply the day titles eg:- Tu,We */}
         <div className="flex gap-x-1">
           {dayTitiles.map((title) => (
             <div key={title.title} className="flex flex-col gap-y-1 ">
@@ -108,12 +111,11 @@ const CalendarFrame = () => {
               onClick={() => handleCalendar(i)}
               className={
                 i.toDateString() === selectedDate
-                  ? "bg-[#f4f4f5] border border-[#f7e8b1]"
+                  ? "bg-[#131313] border text-gray-50 hover:bg-[#131313] hover:text-gray-50"
                   : "kaputa"
               }
               key={index}
               day={getDate(i)}
-              id={i.toDateString()}
               today={isToday(i.toDateString())}
               special={specialDates.includes(i.toDateString())}
             />
@@ -127,7 +129,6 @@ const CalendarFrame = () => {
           <CalendarBtn day="20" />
           <CalendarBtn /> */}
       </div>
-      
     </div>
   );
 };
