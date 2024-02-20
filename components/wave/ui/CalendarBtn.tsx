@@ -22,13 +22,13 @@ const CalendarBtn = ({ day,className, onClick, id, today, special, active = true
   };
 
   return (
-    <div className="relative w-8 h-8">
+    <div className="relative w-8 h-8 lg:w-16 lg:h-14">
       {day ? (
         <button
           id={id}
           onClick={onClick}
           className={cn(
-            "w-8 text-nowrap text-[#a5a5a5] h-8 flex justify-center items-center text-sm rounded-md",
+            "w-full text-nowrap text-[#a5a5a5] h-full flex justify-center items-center text-sm rounded-md",
             active ? varient.active : "cursor-not-allowed",
             today && varient.today,
             className

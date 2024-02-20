@@ -71,7 +71,7 @@ const CalendarFrame = () => {
     toast(`Date Selected ${i.toDateString()}`);
   };
   return (
-    <div className="flex flex-col p-3 gap-y-2 shadow-md rounded-md bg-white border-gray-50">
+    <div className="flex flex-col p-3 gap-y-2 shadow-md rounded-md bg-white border-gray-50 select-none">
       <div className="flex justify-between items-center">
         <button
           onClick={preMonth}
@@ -95,7 +95,7 @@ const CalendarFrame = () => {
         <div className="flex gap-x-1">
           {dayTitiles.map((title) => (
             <div key={title.title} className="flex flex-col gap-y-1 ">
-              <div className="w-8 h-8 flex justify-center items-center text-[0.8rem] text-gray-500">
+              <div className="w-8 h-8 lg:w-16 lg:h-14 flex justify-center items-center text-[0.8rem] text-gray-500">
                 {title.title}
               </div>
             </div>
